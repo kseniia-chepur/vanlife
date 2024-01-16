@@ -1,5 +1,5 @@
 .about-page__hero {
-  max-width: 100%;
+  width: 100%;
 }
 
 .about-page__content {
@@ -9,11 +9,13 @@
 }
 
 .about-page__title {
+  font-size: 32px;
   line-height: 38px;
 }
 
 .about-page__description {
-  line-height: 22px;
+  line-height: 22px;  
+  font-weight: 500;
 }
 
 .about-page__cta {
@@ -28,6 +30,7 @@
 .about-page__subtitle {
   margin: 0;
   padding-block: 37px;
+  line-height: 30px;
 }
 
 .link-btn {

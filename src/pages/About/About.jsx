@@ -5,13 +5,6 @@ import './About.css';
 const About = () => {
   return (
     <div className='about-page'>
-      <header>
-        <nav>
-          <Link to='/'>#VANLIFE</Link>
-          <Link to='/about'>About</Link>
-          <Link to='/'>Home</Link>
-        </nav>
-      </header>
       <main>
         <img 
           src={bgImg} 
