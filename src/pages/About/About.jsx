@@ -27,7 +27,7 @@ const About = () => {
             Your destination is waiting.
             Your van is ready.
           </h2>
-          <Link to='/vans' className='link-btn'>Explore our vans</Link>
+          <Link to='/vans' className='link-btn link-btn--black'>Explore our vans</Link>
         </section>
       </main>
       <footer>

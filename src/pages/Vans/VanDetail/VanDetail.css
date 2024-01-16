@@ -1,0 +1,42 @@
+.van-detail {
+  padding: 27px;
+}
+
+.van-detail__content {
+  display: flex;
+  flex-direction: column;
+  color: #161616;
+}
+
+.van-detail__img {
+  border-radius: 5px;
+  margin-block: 47px;
+}
+
+.van-detail__title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.van-detail__description {
+  margin-block: 10px 22px;
+}
+
+.van-detail__content > i {
+  align-self: flex-start;
+}
+
+.van-detail__price {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.van-detail__price span {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+}

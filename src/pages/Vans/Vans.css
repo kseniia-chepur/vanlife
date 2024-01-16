@@ -10,6 +10,11 @@
   margin-top: 57px;
 }
 
+.van a {
+  color: #161616;
+  text-decoration: none;
+}
+
 .van__img {
   max-width: 100%;
   border-radius: 5px;
@@ -18,27 +23,27 @@
 .van__info {
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-block: 10px;
 }
 
 .van__title {
   margin: 0;
   color: #161616;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
-  line-height: 32px; 
+  line-height: 2rem; 
 }
 
 .van__price {
   margin: 0;
   color: #161616;
   text-align: right;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
-  line-height: 32px; 
+  line-height: 2rem; 
 }
 
-.van__price--for {
+.van__price span {
   font-size: 14px; 
   font-weight: 500;
   display: block;

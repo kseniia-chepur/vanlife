@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import About from './pages/About/About';
 import Home from './pages/Home/Home';
 import Vans from './pages/Vans/Vans';
+import VanDetail from './pages/Vans/VanDetail/VanDetail';
+
+import "./server";
 
 function App() {
   return (
@@ -19,6 +22,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/vans" element={<Vans />} />
+      <Route path="/vans/:id" element={<VanDetail />} />
     </Routes>
   </BrowserRouter>
   );

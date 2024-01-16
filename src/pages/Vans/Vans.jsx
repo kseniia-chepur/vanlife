@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import './Vans.css';
 
 const Vans = () => {
   const [vans, setVans] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/vans.json')
+    fetch('/api/vans')
         .then(res => res.json())
-        .then(data => setVans(data));
+        .then(data => setVans(data.vans));
   }, []);
 
   return (
@@ -16,12 +17,14 @@ const Vans = () => {
       {vans && <div className="vans__list"> 
         {vans.map(van => (
         <div key={van.id} className="van">
-          <img src={van.imageUrl} className="van__img" />
-          <div className="van__info">
-            <h3 className="van__title">{van.name}</h3>
-            <p className="van__price">${van.price}<span className="van__price--for">/day</span></p>
-          </div>
-          <i className={`van__type van__type--${van.type} selected`}>{van.type}</i>
+          <Link to={van.id}>
+            <img src={van.imageUrl} className="van__img" />
+            <div className="van__info">
+              <h3 className="van__title">{van.name}</h3>
+              <p className="van__price">${van.price}<span>/day</span></p>
+            </div>
+            <i className={`van__type van__type--${van.type} selected`}>{van.type}</i>
+          </Link>
         </div>
       ))} 
       </div>}
