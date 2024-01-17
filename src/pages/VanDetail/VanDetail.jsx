@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import './VanDetail.css';
+import './VanDetail.scss';
 
 const VanDetail = () => {
   const { id } = useParams();
@@ -21,7 +21,7 @@ const VanDetail = () => {
             <h2 className="van-detail__title">{van.name}</h2>
             <p className="van-detail__price"><span>${van.price}</span>/day</p>
             <p className="van-detail__description">{van.description}</p>
-            <div className="link">
+            <div className="van-detail__link">
               <button className="link-btn">Rent this van</button>
             </div>
         </div>

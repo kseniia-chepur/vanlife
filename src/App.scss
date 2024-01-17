@@ -75,6 +75,12 @@ header a:hover {
   transform: translate(1px, 1px);
 }
 
+@media (max-width: 768px) {
+  .link-btn {
+    width: 75%;
+  }
+}
+
 @media (max-width: 576px) {
   .link-btn {
     width: 100%;

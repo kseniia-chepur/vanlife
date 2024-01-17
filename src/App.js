@@ -1,9 +1,9 @@
-import './App.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import About from './pages/About/About';
 import Home from './pages/Home/Home';
 import Vans from './pages/Vans/Vans';
-import VanDetail from './pages/Vans/VanDetail/VanDetail';
+import VanDetail from './pages/VanDetail/VanDetail';
+import './App.scss';
 
 import "./server";
 

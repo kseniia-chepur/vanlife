@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import './Vans.css';
+import './Vans.scss';
 
 const Vans = () => {
   const [vans, setVans] = useState(null);
@@ -17,7 +17,7 @@ const Vans = () => {
       {vans && <div className="vans__list"> 
         {vans.map(van => (
         <div key={van.id} className="van">
-          <Link to={van.id}>
+          <Link to={van.id} className="van__link">
             <img src={van.imageUrl} alt={van.name} className="van__img" />
             <div className="van__info">
               <h3 className="van__title">{van.name}</h3>

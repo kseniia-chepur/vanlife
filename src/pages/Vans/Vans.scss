@@ -1,0 +1,97 @@
+.vans {
+  padding-inline: 23px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 34px;
+    margin-top: 57px;
+  }
+}
+
+.van {
+  &__link {
+    color: #161616;
+    text-decoration: none;
+  }
+
+  &__img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 10px;
+  }
+
+  &__title {
+    margin: 0;
+    color: #161616;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 2rem; 
+  }
+
+  &__price {
+    margin: 0;
+    color: #161616;
+    text-align: right;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 2rem; 
+
+    & span {
+      font-size: 14px; 
+      font-weight: 500;
+      display: block;
+      line-height: 20px;
+    }
+  }
+
+  &__type {
+    height: 34px;
+    padding: 7px 14px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+    margin-bottom: 23px;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        color: #FFEAD0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &.selected {
+        color: #FFEAD0;
+      }
+
+      &--simple {
+        &:hover, &.selected {
+          background-color: #E17654;
+        }
+      }
+
+      &--rugged {
+        &:hover, &.selected {
+        background-color: #115E59;
+      }    
+    }
+
+    &--luxury {
+      &:hover, &.selected {
+        background-color: #161616;
+      }   
+    }
+  }
+}
+
