@@ -1,3 +1,5 @@
+@import "../../utils/variables.scss";
+
 .home {
   &__content {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), 
@@ -7,7 +9,7 @@
     -o-background-size: cover;
     background-size: cover;
     min-height: 350px;
-    color: white;
+    color: $white-c;
     padding-block: 65px;
     display: flex;
     flex-direction: column;

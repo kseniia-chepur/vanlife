@@ -1,0 +1,28 @@
+.header {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  padding-block: 10px;
+
+  &__logo {
+    color: black;
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.565rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #4D4D4D;
+    font-weight: 600;
+    padding: 5px 20px;
+
+    &:hover {
+      color: #161616;
+      text-decoration: underline;
+    }
+  }
+}
+
+

@@ -1,3 +1,5 @@
+@import "../../utils/variables.scss";
+
 .van-detail {
   padding: 27px;
   display: flex;
@@ -6,8 +8,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    color: #161616;
-    max-width: 950px;
+      max-width: 950px;
   }
 
   &__img {

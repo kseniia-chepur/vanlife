@@ -1,3 +1,5 @@
+@import "./utils/variables.scss";
+
 * {
   box-sizing: border-box;
 }
@@ -5,8 +7,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #FFF7ED;
   font-family: "Inter", sans-serif;
+  background-color: $bg-c;
+  color: $primary-c;
 }
 
 body::-webkit-scrollbar {
@@ -22,41 +25,14 @@ h1, h2, p {
   margin: 0;
 }
 
-header {
-  height: 110px;
-  display: flex;
-  align-items: center;
-  padding-block: 10px;
-}
-
-header .site-logo {
-  color: black;
-  margin-right: auto;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 1.565rem;
-}
-
-header a {
-  text-decoration: none;
-  color: #4D4D4D;
-  font-weight: 600;
-  padding: 5px 20px;
-}
-
-header a:hover {
-  color: #161616;
-  text-decoration: underline;
-}
-
 .link-btn {
   display: inline-block;
   text-align: center;
   width: 50%;
   text-decoration: none;
   border: none;
-  background-color: #FF8C38;
-  color: #FFF;
+  background-color: $accent-c;
+  color: $white-c;
   font-size: 1.125rem;
   padding: 12px 22px;
   font-weight: 700;
@@ -66,7 +42,7 @@ header a:hover {
 }
 
 .link-btn--black {
-  background-color: #161616;
+  background-color: $primary-c;
   border-radius: 10px;
 }
 

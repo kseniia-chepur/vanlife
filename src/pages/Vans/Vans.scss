@@ -1,3 +1,5 @@
+@import "../../utils/variables.scss";
+
 .vans {
   padding-inline: 23px;
 
@@ -12,7 +14,7 @@
 
 .van {
   &__link {
-    color: #161616;
+    color: $primary-c;
     text-decoration: none;
   }
 
@@ -27,17 +29,13 @@
     padding-block: 10px;
   }
 
-  &__title {
-    margin: 0;
-    color: #161616;
+  &__title {   
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 2rem; 
   }
 
   &__price {
-    margin: 0;
-    color: #161616;
     text-align: right;
     font-size: 1.25rem;
     font-weight: 600;
@@ -58,13 +56,13 @@
     font-weight: 500;
     border: none;
     border-radius: 5px;
-    background-color: #FFEAD0;
-    color: #4D4D4D;
+    background-color: $std-type-c;
+    color: $gray-c;
     margin-bottom: 23px;
     transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 
       &:hover {
-        color: #FFEAD0;
+        color: $std-type-c;
       }
 
       &:focus {
@@ -72,24 +70,24 @@
       }
 
       &.selected {
-        color: #FFEAD0;
+        color: $std-type-c;
       }
 
       &--simple {
         &:hover, &.selected {
-          background-color: #E17654;
+          background-color: $simple-type-c;
         }
       }
 
       &--rugged {
         &:hover, &.selected {
-        background-color: #115E59;
-      }    
+        background-color: $rugged-type-c;
+      } 
     }
 
     &--luxury {
       &:hover, &.selected {
-        background-color: #161616;
+        background-color: $primary-c;
       }   
     }
   }
