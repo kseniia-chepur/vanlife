@@ -16,7 +16,7 @@ const VanDetail = () => {
     <div className="van-detail">
     {van ? (
         <div className="van-detail__content">
-            <img src={van.imageUrl} className="van-detail__img"/>
+            <img src={van.imageUrl} alt={van.name} className="van-detail__img"/>
             <i className={`van__type van__type--${van.type} selected`}>{van.type}</i>
             <h2 className="van-detail__title">{van.name}</h2>
             <p className="van-detail__price"><span>${van.price}</span>/day</p>

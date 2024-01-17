@@ -1,5 +1,6 @@
 .about-page__hero {
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .about-page__content {
@@ -9,12 +10,13 @@
 }
 
 .about-page__title {
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  margin-bottom: 32px;
 }
 
 .about-page__description {
-  line-height: 22px;  
+  line-height: 1.375rem;
   font-weight: 500;
 }
 
@@ -22,19 +24,13 @@
   background-color: #FFCC8D;
   color: #161616;
   padding-inline: 32px;
-  padding-bottom: 32px;
+  padding-block: 32px;
   margin-inline: 27px;
   border-radius: 5px;
 }
 
 .about-page__subtitle {
-  margin: 0;
-  padding-block: 37px;
-  line-height: 30px;
+  line-height: 1.875rem;
+  margin-bottom: 25px;
 }
 
-/* .about-page .about-page__link {
-  background-color: #161616;
-  color: white;
-  border-radius: 10px;
-} */

@@ -1,16 +1,20 @@
 .van-detail {
   padding: 27px;
+  display: flex;
+  justify-content: center;
 }
 
 .van-detail__content {
   display: flex;
   flex-direction: column;
   color: #161616;
+  max-width: 950px;
 }
 
 .van-detail__img {
   border-radius: 5px;
   margin-block: 47px;
+  max-width: 100%;
 }
 
 .van-detail__title {
