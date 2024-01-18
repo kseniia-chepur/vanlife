@@ -1,0 +1,19 @@
+@import "../../utils/variables.scss";
+
+.host-nav {
+  display: flex;
+  
+  &__link {
+    text-decoration: none;
+    color: $gray-c;
+    font-weight: 500;
+    padding: 5px 20px;
+
+    &:hover {
+      color: $primary-c;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+  }
+}
+

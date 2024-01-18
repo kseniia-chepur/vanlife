@@ -34,10 +34,7 @@ const About = () => {
             Explore our vans
           </Link>
         </section>
-      </main>
-      <footer>
-      Ⓒ 2022 #VANLIFE
-    </footer>
+      </main>     
     </div>
   )
 }
