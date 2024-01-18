@@ -1,15 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.scss";
+
+
+const applyClassNames = ({ isActive } ) => 
+  isActive 
+    ? "header__link header__link--active"
+    : "header__link"
 
 const Header = () => {
   return (
     <header className="header">
       <Link to="/" className="header__logo">#VanLife</Link>
       <nav>
-        <Link to="/host" className="header__link">Host</Link>
-        <Link to="/about" className="header__link">About</Link> 
-        <Link to="/" className="header__link">Home</Link>
-        <Link to="/vans" className="header__link">Vans</Link>
+        <NavLink to="/host" 
+          className={applyClassNames}>
+          Host
+        </NavLink>
+        <NavLink to="/about" 
+          className={applyClassNames}>
+          About
+        </NavLink>      
+        <NavLink to="/vans" 
+          className={applyClassNames}>
+          Vans
+        </NavLink>
       </nav>
   </header>
   )

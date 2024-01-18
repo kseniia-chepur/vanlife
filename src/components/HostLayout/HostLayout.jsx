@@ -1,15 +1,29 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import "./HostLayout.scss";
+
+const applyClassNames = ({ isActive } ) => 
+  isActive 
+    ? "host-nav__link host-nav__link--active" 
+    : "host-nav__link"
 
 const HostLayout = () => {
   return (
     <>
       <nav className="host-nav">
-        <Link to="/host" className="host-nav__link">Dashboard</Link>
-        <Link to="/host/income" className="host-nav__link">Income</Link> 
-        <Link to="/host/reviews" className="host-nav__link">Reviews</Link>
+        <NavLink to="/host" end
+          className={applyClassNames}>
+          Dashboard
+        </NavLink>
+        <NavLink to="/host/income"
+          className={applyClassNames}> 
+          Income
+        </NavLink> 
+        <NavLink to="/host/reviews"
+          className={applyClassNames}>
+          Reviews
+        </NavLink>
       </nav>
- 
+
       <Outlet />
     </>
   )
