@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './HostVanDetail.scss';
 import VanType from "../../components/VanType/VanType";
+import BackButton from "../../components/BackButton/BackButton";
 
 const HostVanDetail = () => {
   const [van, setVan] = useState(null);
@@ -15,6 +16,7 @@ const HostVanDetail = () => {
 
   return (
     <>
+      <BackButton />
       {van && (
         <section>
           <div className="host-van-detail">
