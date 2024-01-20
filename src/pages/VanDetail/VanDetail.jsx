@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './VanDetail.scss';
+import VanType from "../../components/VanType/VanType";
 
 const VanDetail = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const VanDetail = () => {
     {van ? (
         <div className="van-detail__content">
             <img src={van.imageUrl} alt={van.name} className="van-detail__img"/>
-            <i className={`van__type van__type--${van.type} selected`}>{van.type}</i>
+            <VanType type={van.type} />
             <h2 className="van-detail__title">{van.name}</h2>
             <p className="van-detail__price"><span>${van.price}</span>/day</p>
             <p className="van-detail__description">{van.description}</p>

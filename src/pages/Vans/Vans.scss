@@ -47,49 +47,6 @@
       display: block;
       line-height: 20px;
     }
-  }
-
-  &__type {
-    height: 34px;
-    padding: 7px 14px;
-    font-style: normal;
-    font-weight: 500;
-    border: none;
-    border-radius: 5px;
-    background-color: $std-type-c;
-    color: $gray-c;
-    margin-bottom: 23px;
-    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
-
-      &:hover {
-        color: $std-type-c;
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      &.selected {
-        color: $std-type-c;
-      }
-
-      &--simple {
-        &:hover, &.selected {
-          background-color: $simple-type-c;
-        }
-      }
-
-      &--rugged {
-        &:hover, &.selected {
-        background-color: $rugged-type-c;
-      } 
-    }
-
-    &--luxury {
-      &:hover, &.selected {
-        background-color: $primary-c;
-      }   
-    }
-  }
+  }  
 }
 

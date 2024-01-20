@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Header.scss";
 
-
 const applyClassNames = ({ isActive } ) => 
   isActive 
     ? "header__link header__link--active"
@@ -10,17 +9,17 @@ const applyClassNames = ({ isActive } ) =>
 const Header = () => {
   return (
     <header className="header">
-      <Link to="/" className="header__logo">#VanLife</Link>
+      <Link to="." className="header__logo">#VanLife</Link>
       <nav>
-        <NavLink to="/host" 
+        <NavLink to="host" 
           className={applyClassNames}>
           Host
         </NavLink>
-        <NavLink to="/about" 
+        <NavLink to="about" 
           className={applyClassNames}>
           About
-        </NavLink>      
-        <NavLink to="/vans" 
+        </NavLink>
+        <NavLink to="vans" 
           className={applyClassNames}>
           Vans
         </NavLink>

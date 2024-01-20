@@ -10,15 +10,19 @@ const HostLayout = () => {
   return (
     <>
       <nav className="host-nav">
-        <NavLink to="/host" end
+        <NavLink to="." end
           className={applyClassNames}>
           Dashboard
         </NavLink>
-        <NavLink to="/host/income"
+        <NavLink to="income"
           className={applyClassNames}> 
           Income
         </NavLink> 
-        <NavLink to="/host/reviews"
+        <NavLink to="vans"
+          className={applyClassNames}>
+          Vans
+        </NavLink>
+        <NavLink to="reviews"
           className={applyClassNames}>
           Reviews
         </NavLink>

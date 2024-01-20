@@ -1,0 +1,41 @@
+@import "../../utils/variables.scss";
+
+.host-vans {
+  padding-inline: 26px;
+
+  &__title {
+    padding-inline: 26px;
+    margin-bottom: 32px;
+  }
+}
+
+.host-van {
+  display: flex;
+  align-items: center;
+  background-color: $white-c;
+  margin-bottom: 15px;
+  padding-block: 18px;
+  padding-left: 24px;
+
+  &__link-wrapper {
+    color: $primary-c;
+    text-decoration: none;
+  }
+
+  &__img {
+    height: 70px;
+    border-radius: 5px;
+    margin-right: 17px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-block: 10px;
+  }
+
+  &__price {
+    margin-block: 10px;
+  }
+}
+
