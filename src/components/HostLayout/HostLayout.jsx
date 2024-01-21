@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import "./HostLayout.scss";
 
 const applyClassNames = ({ isActive } ) => 
