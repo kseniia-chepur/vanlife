@@ -11,6 +11,10 @@
     margin-bottom: 26px;
   }
 
+  &__info {
+    padding-top: 25px;
+  }
+
   &__img {
     height: 160px;
     border-radius: 5px;
@@ -18,7 +22,7 @@
   }
 
   &__title {
-    margin-block: 16px 5px;
+    margin-block: 18px 5px;
     font-size: 1.625rem;
     font-weight: 700;
   }

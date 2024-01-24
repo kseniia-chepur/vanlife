@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import './Vans.scss';
 import VanType from "../../components/VanType/VanType";
 
 const Vans = () => {
   const [vans, setVans] = useState(null);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get('type');
+
 
   useEffect(() => {
     fetch('/api/vans')
@@ -12,11 +16,52 @@ const Vans = () => {
         .then(data => setVans(data.vans));
   }, []);
 
+  function handleFilterChange(key, value) {
+    setSearchParams(prevParams => {
+        if (value === null) {
+            prevParams.delete(key)
+        } else {
+            prevParams.set(key, value)
+        }
+        return prevParams
+    })
+}
+
   return (
     <div className="vans">
       <h1 className="vans__title">
         Explore our van options
       </h1>
+      <div className="vans__filter">
+        <button
+          onClick={() => handleFilterChange("type", "simple")}
+          className={`vans__filter-btn vans__filter-btn--simple ${typeFilter === "simple" && "selected"}`}
+        >
+          Simple
+        </button>
+        <button
+            onClick={() => handleFilterChange("type", "luxury")}
+            className={`vans__filter-btn vans__filter-btn--luxury ${typeFilter === "luxury" ? "selected" : ""}`}
+        >
+          Luxury
+        </button>
+        <button
+            onClick={() => handleFilterChange("type", "rugged")}
+            className={`vans__filter-btn vans__filter-btn--rugged ${typeFilter === "rugged" ? "selected" : ""}`}
+        >
+          Rugged
+        </button>
+
+        {typeFilter && (
+            <button
+              onClick={() => handleFilterChange("type", null)}
+              className="vans__filter-btn vans__filter-btn--clear-filter"
+            >
+              Clear filter
+            </button>
+        )}
+      </div>
+
       {vans && <div className="vans__list"> 
         {vans.map(van => (
         <div key={van.id} className="van">

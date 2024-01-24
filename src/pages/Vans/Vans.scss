@@ -3,12 +3,64 @@
 .vans {
   padding-inline: 23px;
 
+  &__title {
+    margin-bottom: 22px;
+  }
+  
+  &__filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  &__filter-btn {
+    height: 34px;
+    padding: 7px 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    color: $gray-c;
+    background: $std-type-c;
+    margin-bottom: 56px;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      color: $std-type-c;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.selected {
+      color: $std-type-c;
+    }
+
+    &--simple {
+      &:hover, &.selected {
+        background-color: $simple-type-c;
+      }
+    }
+
+    &--rugged {
+      &:hover, &.selected {
+        background-color: $rugged-type-c;
+      } 
+    }
+
+    &--luxury {
+      &:hover, &.selected {
+        background-color: $primary-c;
+      }
+    }
+  }
+
   &__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     gap: 34px;
-    margin-top: 57px;
   }
 }
 
@@ -29,7 +81,7 @@
     padding-block: 10px;
   }
 
-  &__title {   
+  &__title {
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 2rem; 
@@ -47,6 +99,10 @@
       display: block;
       line-height: 20px;
     }
-  }  
+  }
 }
 
+
+.van-list-filter-buttons > a {
+  margin-right: 15px;
+}

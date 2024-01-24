@@ -3,7 +3,7 @@ import './VanType.scss';
 const VanType = ({ type }) => {
   return (
     <>
-      <i className={`van-type van-type--${type} selected`}>{type}</i>
+      <span className={`van-type van-type--${type} selected`}>{type}</span>
     </>
   )
 }

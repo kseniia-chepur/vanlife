@@ -16,7 +16,6 @@ const Home = () => {
           Find your van
         </Link>
       </main>
-      <footer>Ⓒ 2022 #VANLIFE</footer>
     </div>
   );
 };
