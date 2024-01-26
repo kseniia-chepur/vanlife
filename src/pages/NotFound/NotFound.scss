@@ -1,0 +1,18 @@
+@import "../../utils/variables.scss";
+
+.not-found {
+  padding-inline: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__home-link {
+    background-color: $primary-c;
+    color: $white-c;
+  }
+}

@@ -16,15 +16,14 @@ const Vans = () => {
         .then(data => setVans(data.vans));
   }, []);
 
-  function handleFilterChange(key, value) {
-    setSearchParams(prevParams => {
-        if (value === null) {
-            prevParams.delete(key)
-        } else {
-            prevParams.set(key, value)
-        }
-        return prevParams
-    })
+  const handleFilterChange = (key, value) => {
+    setSearchParams(params => {
+      !value 
+        ? params.delete(key)
+        : params.set(key, value);
+        
+        return params;
+    });
 }
 
   return (
@@ -41,13 +40,13 @@ const Vans = () => {
         </button>
         <button
             onClick={() => handleFilterChange("type", "luxury")}
-            className={`vans__filter-btn vans__filter-btn--luxury ${typeFilter === "luxury" ? "selected" : ""}`}
+            className={`vans__filter-btn vans__filter-btn--luxury ${typeFilter === "luxury" && "selected"}`}
         >
           Luxury
         </button>
         <button
             onClick={() => handleFilterChange("type", "rugged")}
-            className={`vans__filter-btn vans__filter-btn--rugged ${typeFilter === "rugged" ? "selected" : ""}`}
+            className={`vans__filter-btn vans__filter-btn--rugged ${typeFilter === "rugged" && "selected"}`}
         >
           Rugged
         </button>

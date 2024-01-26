@@ -16,10 +16,11 @@ import HostVanDetail from './pages/HostVanDetail/HostVanDetail';
 import HostVanInfo from './pages/HostVanInfo/HostVanInfo';
 import HostVanPhotos from './pages/HostVanPhotos/HostVanPhotos';
 import HostVanPricing from './pages/HostVanPricing/HostVanPricing';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
-  <BrowserRouter>   
+  <BrowserRouter> 
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
@@ -37,6 +38,7 @@ function App() {
           </Route>
           <Route path="reviews" element={<Reviews />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   </BrowserRouter>
