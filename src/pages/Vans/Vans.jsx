@@ -2,18 +2,32 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import './Vans.scss';
 import VanType from "../../components/VanType/VanType";
+import { getVans } from "../../api";
+import Loader from "../../components/Loader/Loader";
 
 const Vans = () => {
   const [vans, setVans] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(null);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get('type');
 
-
   useEffect(() => {
-    fetch('/api/vans')
-        .then(res => res.json())
-        .then(data => setVans(data.vans));
+    const loadVans = async () => {
+      setIsLoading(true);
+
+      try {
+        const vans = await getVans();
+        setVans(vans);
+      } catch (err) {
+          setErrorMsg("Failed to load data. Please try again later.");
+      } finally {
+          setIsLoading(false);
+      }
+    }
+
+    loadVans();
   }, []);
 
   const handleFilterChange = (key, value) => {
@@ -24,10 +38,26 @@ const Vans = () => {
         
         return params;
     });
-}
+  }
+
+  const displayedVans = typeFilter && vans
+    ? vans.filter(van => van.type === typeFilter) 
+    : vans;
+
+  if (isLoading) {
+    return (
+      <Loader />
+    )
+  }
+
+  if (errorMsg) {
+    return (
+      <h1 className="vans__error-msg">{errorMsg}</h1>
+    )
+  }
 
   return (
-    <div className="vans">
+    vans && (<div className="vans">
       <h1 className="vans__title">
         Explore our van options
       </h1>
@@ -61,8 +91,8 @@ const Vans = () => {
         )}
       </div>
 
-      {vans && <div className="vans__list"> 
-        {vans.map(van => (
+      <div className="vans__list"> 
+        {displayedVans.map(van => (
         <div key={van.id} className="van">
           <Link to={van.id} className="van__link">
             <img 
@@ -83,8 +113,8 @@ const Vans = () => {
           </Link>
         </div>
       ))} 
-      </div>}
-    </div>
+      </div>
+    </div>)
   )
 }
 

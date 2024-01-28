@@ -1,23 +1,50 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./HostVans.scss";
+import { getHostVans } from "../../api";
+import Loader from "../../components/Loader/Loader";
 
 const HostVans = () => {
   const [hostVans, setHostVans] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(null);
 
   useEffect(() => {
-    fetch('/api/host/vans')
-      .then(res => res.json())
-      .then(data => setHostVans(data.vans))
+    const loadVans = async () => {
+      setIsLoading(true);
+
+      try {
+        const hostVans = await getHostVans();
+        setHostVans(hostVans);
+      } catch (err) {
+          setErrorMsg("Failed to load data. Please try again later.");
+      } finally {
+          setIsLoading(false);
+      }
+    }
+
+    loadVans();
   }, []);
+
+  if (isLoading) {
+    return (
+      <Loader />
+    )
+  }
+
+  if (errorMsg) {
+    return (
+      <h1 className="vans__error-msg">{errorMsg}</h1>
+    )
+  }
 
   return (
     <section className="host-vans">
       <h1 className="host-vans__title">
         Your listed vans
       </h1>
-      {hostVans 
-        ? (hostVans.map(van => (
+      {hostVans &&
+        (hostVans.map(van => (
           <Link to={van.id} 
             key={van.id} 
             className="host-van__link-wrapper"
@@ -39,7 +66,7 @@ const HostVans = () => {
             </div>
           </Link>
         ))) 
-        : <h2>Loading...</h2>}
+      }
     </section>
   )
 }

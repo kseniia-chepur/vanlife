@@ -3,6 +3,8 @@ import { NavLink, Outlet, useParams } from "react-router-dom";
 import './HostVanDetail.scss';
 import VanType from "../../components/VanType/VanType";
 import BackButton from "../../components/BackButton/BackButton";
+import Loader from "../../components/Loader/Loader";
+import { getHostVans } from "../../api";
 
 const applyClassNames = ({ isActive } ) => 
   isActive 
@@ -10,14 +12,39 @@ const applyClassNames = ({ isActive } ) =>
     : "host-van-detail__link"
 
 const HostVanDetail = () => {
-  const [currentVan, setCurrentVan] = useState(null);
   const { id } = useParams();
+  const [currentVan, setCurrentVan] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/host/vans/${id}`)
-      .then(res => res.json())
-      .then(data => setCurrentVan(data.vans))
+    const loadVans = async () => {
+      setIsLoading(true);
+
+      try {
+        const vans = await getHostVans(id);
+        setCurrentVan(vans);
+      } catch (err) {
+          setErrorMsg("Failed to load data about the selected van. Please try again later.");
+      } finally {
+          setIsLoading(false);
+      }
+    }
+
+    loadVans();
   }, [id]);
+
+  if (isLoading) {
+    return (
+      <Loader />
+    )
+  }
+
+  if (errorMsg) {
+    return (
+      <h1 className="vans__error-msg">{errorMsg}</h1>
+    )
+  }
 
   return (
     <>
