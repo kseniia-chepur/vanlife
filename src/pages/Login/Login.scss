@@ -48,7 +48,13 @@
     background-color: $accent-c;
     font-family: inherit;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .1s ease-in-out;
+
+    &:hover {
+      transform: translate(1px, 1px);
+    }
   }
 }
 

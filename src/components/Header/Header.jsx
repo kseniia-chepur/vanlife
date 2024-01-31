@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import loginIcon from "../../assets/icons/login.svg";
 import "./Header.scss";
 
 const applyClassNames = ({ isActive } ) => 
@@ -10,7 +11,7 @@ const Header = () => {
   return (
     <header className="header">
       <Link to="." className="header__logo">#VanLife</Link>
-      <nav>
+      <nav className="header__nav">
         <NavLink to="host" 
           className={applyClassNames}>
           Host
@@ -23,6 +24,15 @@ const Header = () => {
           className={applyClassNames}>
           Vans
         </NavLink>
+        <Link to="login" 
+          className="header__link"
+        >
+          <img 
+            src={loginIcon}
+            alt="login icon"
+            className="header__login-icon"
+          />
+        </Link>
       </nav>
   </header>
   )
