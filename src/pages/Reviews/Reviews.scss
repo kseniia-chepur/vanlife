@@ -1,0 +1,60 @@
+@import "../../utils/variables.scss";
+
+.reviews {
+  padding-inline: 26px;
+  color: $primary-c;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-right: 20px;
+  }
+
+  &__period {
+    color: $gray-c;
+    padding-top: 12px;
+  }
+
+  & span {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+}
+
+.review {
+  margin-block: 25px;
+
+  &__info {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    margin-right: 10px;
+    font-weight: 600;
+  }
+
+  &__date {
+    color: $date-c;
+  }
+
+  &__star {
+    color: $accent-c;
+    margin: 0 5px 10px 0;
+  }
+
+  &__separator {
+    background-color: $line-c;
+    height: 1px;
+    border: 0;
+  }
+}
+
+
+
