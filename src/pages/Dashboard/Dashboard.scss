@@ -1,0 +1,66 @@
+@import "../../utils/variables.scss";
+
+.dashboard {
+  &__income {
+    background-color: $beige-c;
+    padding: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 2.25rem;
+    margin-bottom: 15px;
+  }
+
+  &__period {
+    color: $gray-c; 
+    margin-bottom: 20px;
+
+    & span {
+      text-decoration: underline;
+      font-weight: 700;
+    }
+  }
+
+  &__income-amount {
+    font-size: 2.375rem;
+    font-weight: 800;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+  }
+
+  &__reviews {
+    background-color: $pastel-bg-c;
+    padding: 26px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__star {
+    color: $accent-c;
+    margin-left: 15px;
+  }
+
+  &__review-info {
+    margin-left: 5px;
+    font-size: 1.25rem;
+    color: $gray-c;
+    margin-right: auto;
+
+    & span {
+      font-weight: 700;
+      color: $primary-c;
+    }
+  }
+}
+
+
+
+
+

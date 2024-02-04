@@ -5,7 +5,7 @@ const VanType = ({ type }) => {
     <>
       <span className={`van-type van-type--${type} selected`}>{type}</span>
     </>
-  )
-}
+  );
+};
 
 export default VanType;

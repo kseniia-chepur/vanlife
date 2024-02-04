@@ -5,8 +5,12 @@ const HostVanPhotos = () => {
   const { currentVan } = useOutletContext();
 
   return (
-    <img src={currentVan.imageUrl} className="host-van-detail-img" alt={currentVan.name} />
-  )
+    <img
+      src={currentVan.imageUrl}
+      className='host-van-detail-img'
+      alt={currentVan.name}
+    />
+  );
 };
 
 export default HostVanPhotos;

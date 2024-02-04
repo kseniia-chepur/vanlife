@@ -21,12 +21,12 @@
     border: none;
     border-radius: 5px;
     color: $gray-c;
-    background: $std-type-c;
+    background: $beige-c;
     margin-bottom: 56px;
     transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-      color: $std-type-c;
+      color: $beige-c;
     }
 
     &:focus {
@@ -34,18 +34,18 @@
     }
 
     &.selected {
-      color: $std-type-c;
+      color: $beige-c;
     }
 
     &--simple {
       &:hover, &.selected {
-        background-color: $simple-type-c;
+        background-color: $salmon-c;
       }
     }
 
     &--rugged {
       &:hover, &.selected {
-        background-color: $rugged-type-c;
+        background-color: $blue-stone-c;
       } 
     }
 
