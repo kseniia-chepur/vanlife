@@ -5,7 +5,7 @@ import { getHostVans } from '../../api';
 import Loader from '../../components/Loader/Loader';
 
 const HostVans = () => {
-  const [hostVans, setHostVans] = useState(null);
+  const [hostVans, setHostVans] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState(null);
 
@@ -37,7 +37,7 @@ const HostVans = () => {
   return (
     <section className='host-vans'>
       <h1 className='host-vans__title'>Your listed vans</h1>
-      {hostVans &&
+      {hostVans.length &&
         hostVans.map((van) => (
           <Link to={van.id} key={van.id} className='host-van__link-wrapper'>
             <div className='host-van'>

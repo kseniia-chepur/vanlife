@@ -12,13 +12,13 @@ html, body {
   color: $primary-c;
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
-
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;  
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 h1, h2, h3, h4, p {
@@ -39,16 +39,15 @@ h1, h2, h3, h4, p {
   border-radius: 5px;
   cursor: pointer;
   transition: transform .1s ease-in-out;
-}
 
-.link-btn--black {
-  background-color: $primary-c;
-  border-radius: 10px;
-}
+  &--black {
+    background-color: $primary-c;
+    border-radius: 10px;
+  }
 
-
-.link-btn:hover {
-  transform: translate(1px, 1px);
+  &:hover {
+    transform: translate(1px, 1px);
+  }
 }
 
 @media (max-width: 768px) {

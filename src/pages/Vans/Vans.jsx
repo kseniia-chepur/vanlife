@@ -6,7 +6,7 @@ import { getVans } from '../../api';
 import Loader from '../../components/Loader/Loader';
 
 const Vans = () => {
-  const [vans, setVans] = useState(null);
+  const [vans, setVans] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState(null);
 
@@ -38,8 +38,8 @@ const Vans = () => {
     });
   };
 
-  const displayedVans =
-    typeFilter && vans ? vans.filter((van) => van.type === typeFilter) : vans;
+  const displayedVans = 
+    typeFilter ? vans.filter((van) => van.type === typeFilter) : vans;
 
   if (isLoading) {
     return <Loader />;
