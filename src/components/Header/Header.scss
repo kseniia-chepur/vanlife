@@ -1,10 +1,10 @@
 @import "../../utils/variables.scss";
 
 .header {
-  height: 110px;
+  height: 10vh;
   display: flex;
   align-items: center;
-  padding: 36px 25px;
+  padding-inline: 25px;
 
   &__logo {
     color: black;

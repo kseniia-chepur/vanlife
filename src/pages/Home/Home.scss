@@ -1,16 +1,19 @@
 @import "../../utils/variables.scss";
 
 .home {
-  &__content {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), 
-    url("../../assets/images/home-hero.png") no-repeat center center;
+   background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), 
+    url("../../assets/images/home-hero.jpg") no-repeat 50%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 350px;
-    color: $white-c;
     padding-block: 65px;
+    min-height: 80vh;
+  &__content {
+   
+
+    color: $white-c;
+
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -18,13 +21,14 @@
 
   &__title {
     font-size: 2.25rem;
-    font-weight: 700;   
+    font-weight: 700;
     line-height: 2.625rem;
     margin-bottom: 23px;
   }
   
   &__description {
-    line-height: 24px;
+    font-weight: 500;
+    line-height: 1.5rem;
     margin-bottom: 52px;
   }
 }
